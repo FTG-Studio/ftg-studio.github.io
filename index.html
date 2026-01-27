@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FTG-Studio</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body data-content-type="sites">
+	<div class="container">
+		<header>
+			<div class="header-left">
+				<div class="logo">
+					<div class="logo-icon">🎮</div>
+					<h1>FTG-Studio</h1>
+				</div>
+				<p class="subtitle" id="subtitle">Game Development & Web Solutions</p>
+			</div>
+			<div class="controls">
+				<div class="content-switcher">
+					<button class="content-btn" data-type="games" id="games-btn">🎮 Games</button>
+					<button class="content-btn active" data-type="sites" id="sites-btn">🌐 Sites</button>
+				</div>
+				<div class="language-switcher">
+					<button class="lang-btn active" data-lang="en">EN</button>
+					<button class="lang-btn" data-lang="ru">RU</button>
+				</div>
+			</div>
+		</header>
+
+		<div class="counter">
+			<span id="counter-text">Found 0 sites</span>
+		</div>
+
+		<div id="loading" class="loading">
+			⏳ Loading...
+		</div>
+
+		<div id="content-container" class="content-grid">
+			<!-- Content cards will be dynamically inserted here -->
+		</div>
+
+		<div id="error-message" class="error" style="display: none;">
+			<!-- Error messages will appear here -->
+		</div>
+
+		<footer>
+			<p id="footer-text">© 2026 FTG-Studio. All rights reserved.</p>
+			<p id="copyright-text">Games and websites developed by our team</p>
+		</footer>
+	</div>
+
+	<script src="translations.js"></script>
+	<script src="contentLoader.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

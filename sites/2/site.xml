@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site>
+	<Info lang="ru">
+		<Name>ЭлектроМастер - профессиональный электрик в Москве</Name>
+		<Description>Услуги электрика в Москве. Выезд бесплатно, гарантия 2 года, опыт более 15 лет. Электромонтаж, установка розеток, монтаж освещения, ремонт электропроводки.</Description>
+	</Info>
+	<Info lang="en">
+		<Name>ElectroMaster - professional electrician in Moscow</Name>
+		<Description>Electrician services in Moscow. Free visit, 2-year warranty, over 15 years of experience. Electrical installation, socket installation, lighting installation, electrical wiring repair.</Description>
+	</Info>
+	<Info>
+		<Preview>preview.jpg</Preview>
+		<IndexPath>www/index.html</IndexPath>
+	</Info>
+</Site>

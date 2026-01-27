@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site>
+	<Info lang="ru">
+		<Name>ТехноСервис - ремонт бытовой техники в Москве</Name>
+		<Description>Сервисный центр ТехноСервис - профессиональный ремонт холодильников, стиральных машин, посудомоечных машин, духовых шкафов и другой бытовой техники. Выезд мастера на дом в день обращения, гарантия до 3 лет, опытные специалисты.</Description>
+	</Info>
+	<Info lang="en">
+		<Name>TechService - Household Appliances Repair in Moscow</Name>
+		<Description>TechService service center - professional repair of refrigerators, washing machines, dishwashers, ovens and other household appliances. On-site technician visit on the day of request, warranty up to 3 years, experienced specialists.</Description>
+	</Info>
+	<Info>
+		<Preview>preview.jpg</Preview>
+		<IndexPath>www/index.html</IndexPath>
+	</Info>
+</Site>

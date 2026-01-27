@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+	<Info lang="ru">
+		<Name>Нубик: Побег от Слендера</Name>
+		<Description>Добро пожаловать в игру "Нубик: Побег от Слендера"! В этой игре вам предстоит собрать все записки, расположенные по лесу, и избежать Слендера, который будет следовать за вами на каждом шагу.</Description>
+		<Preview>preview-ru.jpg</Preview>
+	</Info>
+	<Info lang="en">
+		<Name>Nubik: Escape from Slender</Name>
+		<Description>Welcome to the game "Nubik: Escape from Slender"! In this game, you must collect all the notes scattered throughout the forest and avoid Slender, who will be following your every step.</Description>
+		<Preview>preview-en.jpg</Preview>
+	</Info>
+	<Info>
+		<IndexPath>play/index.html</IndexPath>
+	</Info>
+</Game>
