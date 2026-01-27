@@ -231,7 +231,6 @@ h1 {
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
-	position: relative;
 }
 
 .card-title {
@@ -239,8 +238,6 @@ h1 {
 	margin-bottom: 10px;
 	color: #fff;
 	line-height: 1.3;
-	min-height: 3.5em;
-	padding-right: 60px;
 }
 
 .card-description {
@@ -314,62 +311,6 @@ body[data-content-type="sites"] .counter {
 	color: #4ecdc4;
 }
 
-.lang-flags {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	display: flex;
-	gap: 5px;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	max-width: 60px;
-}
-
-.lang-flag {
-	width: 24px;
-	height: 16px;
-	border-radius: 2px;
-	overflow: hidden;
-	position: relative;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	cursor: help;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
-/* SVG флаги через background-image */
-.lang-flag.en {
-	background-image: url('flag_us.svg');
-}
-
-.lang-flag.ru {
-	background-image: url('flag_ru.svg');
-}
-
-.lang-flag.tooltip::after {
-	content: attr(data-lang);
-	position: absolute;
-	bottom: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	background: rgba(0, 0, 0, 0.8);
-	color: white;
-	padding: 4px 8px;
-	border-radius: 4px;
-	font-size: 12px;
-	white-space: nowrap;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.2s;
-	z-index: 100;
-}
-
-.lang-flag.tooltip:hover::after {
-	opacity: 1;
-	visibility: visible;
-}
-
 footer {
 	text-align: center;
 	margin-top: 50px;
@@ -424,11 +365,6 @@ footer {
 		justify-content: space-between;
 	}
 	
-	.lang-flags {
-		top: 15px;
-		right: 15px;
-	}
-	
 	h1 {
 		font-size: 2rem;
 	}
@@ -448,7 +384,6 @@ footer {
 	}
 	
 	.card-title {
-		padding-right: 50px;
 		font-size: 1.2rem;
 	}
 }

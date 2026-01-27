@@ -248,18 +248,18 @@ class ContentLoader {
 				name: `${itemName} ${id}`,
 				description: '',
 				preview: 'preview.jpg',
-				indexPath: rootTag === 'Game' ? 'play/index.html' : 'www/index.html'
+				indexPage: rootTag === 'Game' ? 'play/index.html' : 'www/index.html'
 			};
 			availableLangs.push('en');
 		}
 		
-		// Ensure all language entries have at least default preview and indexPath
+		// Ensure all language entries have at least default preview and indexPage
 		Object.keys(infos).forEach(lang => {
 			if (!infos[lang].preview && defaultData.preview) {
 				infos[lang].preview = defaultData.preview;
 			}
-			if (!infos[lang].indexPath && defaultData.indexPath) {
-				infos[lang].indexPath = defaultData.indexPath;
+			if (!infos[lang].indexPage && defaultData.indexPage) {
+				infos[lang].indexPage = defaultData.indexPage;
 			}
 		});
 		
@@ -280,13 +280,13 @@ class ContentLoader {
 		const name = infoElement.querySelector('Name')?.textContent?.trim() || '';
 		const description = infoElement.querySelector('Description')?.textContent?.trim() || '';
 		const preview = infoElement.querySelector('Preview')?.textContent?.trim() || '';
-		const indexPath = infoElement.querySelector('IndexPath')?.textContent?.trim() || '';
+		const indexPage = infoElement.querySelector('IndexPage')?.textContent?.trim() || '';
 		
 		return {
 			name,
 			description,
 			preview,
-			indexPath
+			indexPage
 		};
 	}
 
@@ -326,21 +326,21 @@ class ContentLoader {
 		if (!itemData.preview && item.defaultData?.preview) {
 			itemData.preview = item.defaultData.preview;
 		}
-		if (!itemData.indexPath && item.defaultData?.indexPath) {
-			itemData.indexPath = item.defaultData.indexPath;
+		if (!itemData.indexPage && item.defaultData?.indexPage) {
+			itemData.indexPage = item.defaultData.indexPage;
 		}
 		
-		// If still no indexPath, create default
-		if (!itemData.indexPath) {
-			itemData.indexPath = item.type === 'game' ? 'play/index.html' : 'www/index.html';
+		// If still no indexPage, create default
+		if (!itemData.indexPage) {
+			itemData.indexPage = item.type === 'game' ? 'play/index.html' : 'www/index.html';
 		}
 		
 		// Construct paths
 		const previewPath = itemData.preview ? 
 			`${item.basePath}/${item.id}/${itemData.preview}` : 
 			'';
-		const indexPath = itemData.indexPath ? 
-			`${item.basePath}/${item.id}/${itemData.indexPath}` : 
+		const indexPagePath = itemData.indexPage ? 
+			`${item.basePath}/${item.id}/${itemData.indexPage}` : 
 			`${item.basePath}/${item.id}/`;
 		
 		// Create card content
@@ -362,10 +362,9 @@ class ContentLoader {
 				</div>
 			</div>
 			<div class="card-info">
-				${this.createLanguageFlags(item.availableLangs)}
 				<h3 class="card-title">${itemData.name}</h3>
 				<p class="card-description">${itemData.description || translations[this.currentLang].noDescription}</p>
-				<a href="${indexPath}" class="card-button ${item.type}" target="_blank">
+				<a href="${indexPagePath}" class="card-button ${item.type}" target="_blank">
 					${item.type === 'game' ? translations[this.currentLang].playButton : translations[this.currentLang].visitButton}
 				</a>
 			</div>
@@ -373,33 +372,13 @@ class ContentLoader {
 		
 		// Add click event to the entire card
 		card.addEventListener('click', (e) => {
-			if (!e.target.classList.contains('card-button') && 
-				!e.target.classList.contains('lang-flag') &&
+			if (!e.target.classList.contains('card-button') &&
 				e.target.tagName !== 'A') {
-				window.open(indexPath, '_blank');
+				window.open(indexPagePath, '_blank');
 			}
 		});
 		
 		return card;
-	}
-
-	createLanguageFlags(langs) {
-		if (!langs || langs.length === 0) return '';
-		
-		const t = translations[this.currentLang];
-		let flagsHTML = '<div class="lang-flags">';
-		
-		langs.forEach(lang => {
-			if (lang === 'default') return; // Skip default flag
-			
-			const langName = t.languageNames[lang] || lang.charAt(0).toUpperCase() + lang.slice(1);
-			flagsHTML += `
-				<div class="lang-flag ${lang} tooltip" data-lang="${langName}" title="${langName}"></div>
-			`;
-		});
-		
-		flagsHTML += '</div>';
-		return flagsHTML;
 	}
 
 	showNoContentMessage() {

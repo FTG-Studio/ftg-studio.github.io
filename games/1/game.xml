@@ -11,6 +11,6 @@
 		<Preview>preview-en.jpg</Preview>
 	</Info>
 	<Info>
-		<IndexPath>play/index.html</IndexPath>
+		<IndexPage>play/index.html</IndexPage>
 	</Info>
 </Game>

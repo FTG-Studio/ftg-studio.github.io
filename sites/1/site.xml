@@ -10,6 +10,6 @@
 	</Info>
 	<Info>
 		<Preview>preview.jpg</Preview>
-		<IndexPath>www/index.html</IndexPath>
+		<IndexPage>www/index.html</IndexPage>
 	</Info>
 </Site>
