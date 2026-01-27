@@ -333,14 +333,18 @@ body[data-content-type="sites"] .counter {
 	position: relative;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	cursor: help;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
+/* SVG флаги через background-image */
 .lang-flag.en {
-	background: linear-gradient(to bottom, #00247d 0%, #00247d 33%, #fff 33%, #fff 66%, #cf142b 66%, #cf142b 100%);
+	background-image: url('flag_us.svg');
 }
 
 .lang-flag.ru {
-	background: linear-gradient(to bottom, #fff 0%, #fff 33%, #0039a6 33%, #0039a6 66%, #d52b1e 66%, #d52b1e 100%);
+	background-image: url('flag_ru.svg');
 }
 
 .lang-flag.tooltip::after {

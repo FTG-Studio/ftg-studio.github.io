@@ -380,11 +380,6 @@ class ContentLoader {
 			}
 		});
 		
-		// Add tooltip to language flags
-		card.querySelectorAll('.lang-flag').forEach(flag => {
-			flag.classList.add('tooltip');
-		});
-		
 		return card;
 	}
 
@@ -399,7 +394,7 @@ class ContentLoader {
 			
 			const langName = t.languageNames[lang] || lang.charAt(0).toUpperCase() + lang.slice(1);
 			flagsHTML += `
-				<div class="lang-flag ${lang}" data-lang="${langName}" title="${langName}"></div>
+				<div class="lang-flag ${lang} tooltip" data-lang="${langName}" title="${langName}"></div>
 			`;
 		});
 		
